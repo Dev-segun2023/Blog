@@ -1,0 +1,107 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/parrot.jpg' %}">
+
+    <link rel="stylesheet" href="{% static  'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static  'aos.min.css' %}">
+    <link rel="stylesheet" href="{% static  'FA/css/all.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'booticon/font/fonts/bootstrap-icon.woff'%}"> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title> {% block title %}  {% endblock %}</title>
+</head>
+<body>
+
+  
+<nav>
+    <div>
+        <div class="row d-flex justify-content-between gy-2 ">
+            <div class="col col-sm-12 col-md-4  ">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/parrot.jpg' %}" alt="logo" class="logo">
+                </a>
+                </div>
+
+            
+            <div class="col col-md-4 col-sm-12 search">
+                <form action="">
+                <div class="row gx-1">
+                <div class="col col-md-8">
+                    <input type="text" name="" id="" placeholder ='search anything here..,' class="form-control ">
+                    <i class="fa-brands fa-searchengin icon"></i>
+                </div>
+                <div class="col col-md-3" >
+                    <button type="submit" class=" py-2">Search</button>
+                </div>
+          
+            </div>
+        </form>
+            </div>
+            <div class="col col-md-4 col-sm-12 d-flex justify-content-end gx-2 ">
+                <button class="btn" ><a href="{% url  'login' %}">Log in</a></button>
+                
+                <button class="btn bg-secondary btn-sm p-1 py-0 "><a href="{% url 'signup'%}">Sign up</a></button>
+            
+            </div>
+        </div>
+    </div>
+    <hr>
+</nav>
+
+
+
+{% block content %}
+
+
+{% endblock %}
+    
+
+
+
+
+
+
+
+
+
+    {% block footer %}
+
+        <div class="footer">
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> facebook</a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i>  Twiiter</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i>  youtube</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="about">
+                <div class="write-up">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum sapiente autem odit, sequi repudiandae et, saepe, inventore debitis alias cumque incidunt hic aliquid distinctio voluptatibus iusto? Excepturi accusamus, libero nam quia corrupti dolor eligendi enim incidunt? Nulla iure ea quo earum similique quia dolorum dolore suscipit ut blanditiis. Corrupti praesentium atque omnis maiores quae obcaecati ipsam ratione. Illum beatae quasi deserunt, accusamus laborum fuga inventore eius laboriosam, dolore qui voluptates iure, dolores enim deleniti esse expedita minus provident? Quod ab aspernatur quia cum! Cumque praesentium labore sint provident quam quibusdam delectus unde vitae, dolorem, suscipit perferendis magni rerum quasi!</p>
+                </div>
+
+                <div class="copyright">
+                    <p><i class="fa-solid fa-copyright"></i> 2024 Certification</p>
+                </div>
+
+            </div>
+
+        </div>
+    {% endblock %}
+
+    
+    <script src="{% static  'bootstrap.js' %}"></script>
+    <script src="{% static  'purecounter.min.js' %}"></script>
+    <script src="{% static  'aos.min.js' %}"></script>
+    <script src="{% static  'typed.umd.js' %}"></script>
+    <script src="{% static  'jquery.min.js' %}"></script>
+    <script src="{% static  'script.js' %}"></script>
+
+</body>
+</html>

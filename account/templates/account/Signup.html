@@ -1,0 +1,73 @@
+{% extends 'common.html' %}
+
+
+{% load static %}
+
+
+{% block title %} Sign up {% endblock %}
+
+
+
+{% block content %}
+
+
+{% if messages%}
+
+{% for message in messages %}
+<p class="border w-50 m-auto  my-2  p-2 text-center ">{{message}}</p>
+
+{% endfor %}
+{% endif %}
+
+<div class="container w-75 bg-dark-subtle p-4 ">
+    <div class="row">
+
+    <div class="col col-md-6 " data-aos='zoom-in' data-aos-duration=5000">
+        <h3>Signing up</h3>
+        <p><b>Sign up</b> now and become a  Community Notes contributor on <b>PARROT</b>. Sign ups are open to everyone, We want anyone to be able to participate and know the recent happenings around and solutions.
+        You can be rest assured that your provided data during signing up are treated with utmost care and confidentiality
+        </p>
+    </div>
+   
+   
+    <div class="col col-md-6">
+<form action="/account/Signup/" method="post" enctype="multipart/form-data" class="container mt-5 bg-info-subtle  p-5" data-aos='zoom-in' data-aos-duration=3000>
+    {% csrf_token %}
+
+    <div class="row">
+        <div class=" col-md-6 col-sm-12 mb-3">
+            <label for="FName" class="form-label ">First Name</label>
+            <input name="first_name" type="text" name="" id="" class="form-control ">
+        </div>
+
+        <div class="col-md-6 col-sm-12 mb-3">
+            <label for="LName" class="form-label ">Last Name</label>
+            <input name="last_name" type="text" name="" id="" class="form-control ">
+        </div>
+        <!-- <div class="col-md-6 col-sm-12 mb-3">
+            <label for="LName" class="form-label ">Photo</label>
+            <input required name="profilepic" type="file" name="" id="" class="form-control ">
+        </div> -->
+
+        <div class="col-md-6 col-sm-12 mb-3">
+            <label for="email" class="form-label ">Email</label>
+            <input name="email" type="email" name="" id="" class="form-control ">
+        </div>
+
+      
+
+        <div class="col-md-6 col-sm-12 mb-3 ">
+            <label for="password" class="form-label ">Password</label>
+            <input name="password" type="password" name="" id="" class="form-control ">
+        </div>
+      
+
+    </div>
+    <button type="submit" class="btn bg-light   mt-2 mb-3  w-75 d-block m-auto ">Sign up</button>
+</form>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
