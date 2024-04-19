@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from base.models import User
 from django.shortcuts import redirect
+from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
 
@@ -55,4 +56,43 @@ def Sign_up(request):
 
         
     return render(request, "account/Signup.html", context={"user": user})
+
+
+
+def Login(request):
+
+    
+    if request.user.is_anonymous:
+        user = None
+
+    else:
+        user = request.user
+
+      
+
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+       
+
+        check = authenticate(email=email, password=password)
+        print(check)
+        if check is None:
+            messages.error(request, 'Invalid credentials')
+
+
+        else:
+            login(request, check)
+            return redirect('home')
+
+    
+    return render(request,"account/login.html", context={"user": user})
+
+
+def Logout(request):
+        logout(request)
+        return redirect('home')
+    # return render(request, 'account/login.html',{})
+    
 # Create your views here.

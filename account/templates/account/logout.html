@@ -1,0 +1,20 @@
+{% extends 'common.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<h2>you just logged out</h2>
+    <div class="border-top  pt-3 ">
+        <form action="" >
+        {% csrf_token %}
+
+            <button type="submit">logout</button>
+        <!-- <small class="text-muted ">
+            Logged out! <a href="{% url 'login' %}">Login again ?</a>
+        </small> -->
+    </form>
+         
+    </div>
+
+{% endblock %}

@@ -22,7 +22,7 @@
     <div>
         <div class="row d-flex justify-content-between gy-2 ">
             <div class="col col-sm-12 col-md-4  ">
-                <a href="{% url 'index' %}">
+                <a href="{% url 'home' %}">
                     <img src="{% static 'images/parrot.jpg' %}" alt="logo" class="logo">
                 </a>
                 </div>
@@ -42,10 +42,19 @@
             </div>
         </form>
             </div>
+
             <div class="col col-md-4 col-sm-12 d-flex justify-content-end gx-2 ">
-                <button class="btn" ><a href="{% url  'login' %}">Log in</a></button>
+                {% if user.is_authenticated %}
+                <button class="btn" ><a href="{% url 'logout' %}">Logout</a></button>
+                {% else %}
+                <button class="btn" ><a href="{% url 'login' %}">Login</a></button>
+                <button class="btn bg-secondary btn-sm p-1 py-0 "><a href="{% url 'signup' %}">Sign up</a></button>
+                {% endif %}
+               
+
                 
-                <button class="btn bg-secondary btn-sm p-1 py-0 "><a href="{% url 'signup'%}">Sign up</a></button>
+
+                
             
             </div>
         </div>

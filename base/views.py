@@ -5,4 +5,8 @@ from .models import Content
 
 def home(request):
     show = Content.objects.all()
-    return render(request, 'index.html', {'show': show})
+    return render(request, 'home.html', {'show': show})
+
+
+def display(request):
+    return render(request)
