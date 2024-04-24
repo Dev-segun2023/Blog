@@ -3,7 +3,6 @@ from django.db import models
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-
 # Create your models here.
 
 
@@ -91,7 +90,7 @@ class User(AbstractBaseUser,PermissionsMixin):
 
 
 class Content(models.Model):
-    image = models.ImageField(upload_to='image')
+    image = models.ImageField(upload_to='media')
     title = models.CharField(max_length=500)
     body = models.TextField(blank=True)
 
@@ -99,11 +98,4 @@ class Content(models.Model):
         return self.title
 
 
-
-
-
-
-    
-
-    
 # Create your models here.
