@@ -1,7 +1,7 @@
 from django.db import models
+from base.models import User
+
  
-from base.models import User
-from base.models import User
 
 
 
