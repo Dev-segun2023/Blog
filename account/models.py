@@ -12,4 +12,13 @@ class profile(models.Model):
     def __str__(self):
         return f'{self.user.email} profile'
 
+
+# class Userupdate(User):
+#     email = User.email
+
+#     class Meta:
+#         models = User
+#         fields = 'email'
+    
+ 
 # Create your models here.

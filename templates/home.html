@@ -5,93 +5,20 @@
 {% block title %} home {% endblock %}
 
 {% block content %}
- <!-- <div id="carouselId" class="carousel slide" data-bs-ride="carousel"> -->
-    <!-- <ol class="carousel-indicators">
-        <li
-            data-bs-target="#carouselId"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="First slide"
-        ></li>
-        <li
-            data-bs-target="#carouselId"
-            data-bs-slide-to="1"
-            aria-label="Second slide"
-        ></li>
-        <li
-            data-bs-target="#carouselId"
-            data-bs-slide-to="2"
-            aria-label="Third slide"
-        ></li>
-    </ol> -->
-    <!-- <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img
-                src="{% static 'images/banner1.jpg' %}"
-                class="w-100 h-100 d-block"
-                alt="First slide"
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h3>AWARENESS!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus pariatur incidunt officia adipisci? Deleniti in velit ipsa laboriosam ab repellat, saepe aperiam! Pariatur eveniet consequatur beatae mollitia esse veritatis officia, tenetur earum totam ipsum blanditiis incidunt quia, placeat sunt? Consectetur culpa ea veritatis aliquid ex cumque dolores possimus pariatur cum!</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img
-                src="{% static 'images/banner2.jpg' %}"
-                class="w-75 d-block"
-                alt="Second slide"
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h3>HAPPENINGS</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, vel officiis et, amet qui accusamus porro animi assumenda adipisci, iure debitis. Nobis quod ipsa neque itaque dignissimos quis possimus ad! Recusandae voluptas debitis sed fugiat itaque dolore autem eos, iure est vitae cupiditate molestias blanditiis ipsum! Deserunt laborum alias quia?</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img
-                src="{% static 'images/banner3.jpg' %}"
-                class="w-75  d-block"
-                alt="Third slide"
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h3>INFORMATION</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita provident explicabo praesentium ab? Sed omnis eum sunt delectus nobis a in repellendus mollitia architecto exercitationem officiis atque commodi cumque hic voluptatibus ex explicabo veniam dignissimos, dicta et aut voluptas minus. Eveniet, dolorum id minima eaque error sunt accusamus labore.</p>
-            </div>
-        </div>
-    </div>
-    <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselId"
-        data-bs-slide="prev"
-    >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselId"
-        data-bs-slide="next"
-    >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
- </div> -->
- <!-- <div class="container-fluid  row gap-3 justify-content-center"  data-aos= 'zoom-in' data-aos-duration = '3000'>
-{% for article in articles %}
+
+ <div class="container-fluid  row gap-3 justify-content-center"  data-aos= 'zoom-in' data-aos-duration = '3000'>
+{% for show in show %}
     <div class="article col col-md-3">
-        <h2><a href="{% url 'display' article.id %}">{{article.title}}</a></h2>
-        <img src="{{article.photopic.url}}" alt="image here" class="w-100 object-fit-contain">
+        <h2><a href="#"">{{show.title}}</a></h2>
+        <img src="{{show.image.url}}" alt="image here" class="w-100 object-fit-contain">
     
-        <p>{{article.body}}</p>
-        <p>{{article.date}}</p>
+        <p>{{show.body}}</p>
+        <p>{{show.date_posted}}</p>
     </div>
 {% endfor %}
 </div>
 
-<!-- {% for bouquet in bouquets %} -->
+{% for bouquet in bouquets %} 
 
 
 <!-- div -->
