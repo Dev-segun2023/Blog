@@ -1,0 +1,34 @@
+{% extends 'common.html' %}
+
+{% load static %}
+
+{% block title %} detail {% endblock %}
+
+{% block content %}
+
+ <div class="container-fluid"  data-aos= 'zoom-in' data-aos-duration = '3000'>
+    <div class="article">
+        <h2>{{object.title}}</h2>
+        <img src="{{object.image.url}}" alt="image here" class="w-50 object-fit-contain">
+        <p>{{object.content}}</p>
+        <p>{{object.date_posted}}</p>
+        <p><a href="#" style="text-decoration: none;">{{object.author}}</a></p>
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- {% for bouquet in bouquets %}  -->
+
+<!-- <h4>{{bouquet.id}}-- <a href="/display/{{bouquet.id}}">{{bouquet.name}}</a></h4> -->
+<!-- <h4>{{bouquet.id}}-- <a href="{% url 'display' bouquet.id %}">{{bouquet.name}}</a></h4> -->
+
+<!-- {% endfor %} -->
+
+{% endblock %}
+

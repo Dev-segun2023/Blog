@@ -9,23 +9,30 @@
  <div class="container-fluid  row gap-3 justify-content-center"  data-aos= 'zoom-in' data-aos-duration = '3000'>
 {% for show in show %}
     <div class="article col col-md-3">
-        <h2><a href="#"">{{show.title}}</a></h2>
+        <h2><a href="{% url 'post-detail' show.id %}">{{show.title}}</a></h2>
         <img src="{{show.image.url}}" alt="image here" class="w-100 object-fit-contain">
-    
-        <p>{{show.body}}</p>
+        <p>{{show.content}}</p>
         <p>{{show.date_posted}}</p>
+        <p><a href="#" style="text-decoration: none;">{{show.author}}</a></p>
+    
     </div>
-{% endfor %}
-</div>
-
-{% for bouquet in bouquets %} 
 
 
-<!-- div -->
 
    
-    
 
+{% endfor %}
+
+<h3>lion</h3>
+</div>
+
+
+
+
+
+
+
+<!-- {% for bouquet in bouquets %}  -->
 
 <!-- <h4>{{bouquet.id}}-- <a href="/display/{{bouquet.id}}">{{bouquet.name}}</a></h4> -->
 <!-- <h4>{{bouquet.id}}-- <a href="{% url 'display' bouquet.id %}">{{bouquet.name}}</a></h4> -->
