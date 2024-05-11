@@ -80,7 +80,7 @@ def Login(request):
         check = authenticate(email=email, password=password)
         print(check)
         if check is None:
-            messages.error(request, 'Invalid credentials')
+            messages.success(request, 'Invalid credentials')
 
 
         else:

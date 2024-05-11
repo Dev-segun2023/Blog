@@ -1,8 +1,10 @@
 nav{
-margin-top: 15px;
-
+margin-top: 10px;
+background: red;
 margin-left: 20px;
-margin-right: 20px;
+margin-right: 20px; 
+padding: 0;
+
 
 
 }
@@ -15,18 +17,19 @@ margin-right: 20px;
 
 .search{
     position: relative;
+    
 }
 
 .search input {
-    padding-left: 35px;
+    padding-left: 28px;
     background:#F5F5F5;
     border-radius: 20px;
 }
 
 .search i {
     position: absolute;
-    left: 25px;
-    top: 33%;
+    left:15px;
+    top: 33%
     
 }
 .footer{
@@ -61,11 +64,11 @@ form{
 }
 
 @media screen and (max-width: 461px) {
-    .search i{
+    /* .search i{
         display: none;
-    }
-    .row{
+    } */
+    /* .row{
         flex-direction: column;
-    }
+    } */
 
 }

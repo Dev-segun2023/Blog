@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from account.models import post
-from django.views.generic import ListView,DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import(
+    ListView,
+    DetailView, 
+    CreateView,
+    UpdateView
+    )
 # Create your views here.
 
 
@@ -24,6 +30,26 @@ class postDetailView(DetailView):
     # context_object_name = 'object'
     # ordering = ['-date_posted'] 
 
+
+class postCreateView(LoginRequiredMixin, CreateView):
+    model = post
+    fields = ['title','content','image']
+    template_name = 'post_create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+
+class postUpdateView(LoginRequiredMixin, UpdateView):
+    model = post
+    fields = ['title','content','image']
+    template_name = 'post_create.html'
+    # template_name = 'post_detail.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 def display(request):
     return render(request)

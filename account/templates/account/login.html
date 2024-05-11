@@ -11,12 +11,12 @@
 {% if messages%}
 
 {% for message in messages %}
-<p class="border w-50 m-auto  my-2  p-2 text-center ">{{message}}</p>
+<p class="border w-75 m-auto  my-2  p-2 text-center text-bg-danger  ">{{message}}</p>
 
 {% endfor %}
 {% endif %}
 
-<form action="/account/login/"  method="post" class="container w-50 mt-5 bg-info-subtle  p-5"  data-aos ='zoom-out' data-aos-duration="3000">
+<form action="/account/login/"  method="post" class="container w-75 mt-3 bg-info-subtle  p-3"  data-aos ='zoom-out' data-aos-duration="3000">
     {% csrf_token %}
        <div class="row" >
        <div>

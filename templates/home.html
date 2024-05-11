@@ -6,12 +6,14 @@
 
 {% block content %}
 
+
+
  <div class="container-fluid  row gap-3 justify-content-center"  data-aos= 'zoom-in' data-aos-duration = '3000'>
 {% for show in show %}
     <div class="article col col-md-3">
-        <h2><a href="{% url 'post-detail' show.id %}">{{show.title}}</a></h2>
+        <h2><a href="{% url 'post-detail' show.id %}" style="text-decoration: none;">{{show.title}}</a></h2>
         <img src="{{show.image.url}}" alt="image here" class="w-100 object-fit-contain">
-        <p>{{show.content}}</p>
+        <p>{{show.snippet}}</p>
         <p>{{show.date_posted}}</p>
         <p><a href="#" style="text-decoration: none;">{{show.author}}</a></p>
     

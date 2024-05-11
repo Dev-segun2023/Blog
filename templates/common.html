@@ -20,7 +20,7 @@
   
 <nav>
     <div>
-        <div class="row d-flex justify-content-between gy-2 ">
+        <div class="row d-flex justify-content-around ">
             <div class="col col-sm-12 col-md-4  ">
                 <a href="{% url 'home' %}">
                     <img src="{% static 'images/parrot.jpg' %}" alt="logo" class="logo">
@@ -30,40 +30,33 @@
             
             <div class="col col-md-4 col-sm-12 search">
                 <form action="">
-                <div class="row gx-1">
-                <div class="col col-md-8">
-                    <input type="text" name="" id="" placeholder ='search anything here..,' class="form-control ">
-                    <i class="fa-brands fa-searchengin icon"></i>
-                </div>
-                <div class="col col-md-3" >
-                    <button type="submit" class=" py-2">Search</button>
-                </div>
-          
+                    <div class="row gx-0">
+                        <div class="col col-md-8">
+                            <input type="text" name="" id="" placeholder="search anything here..." class="form-control ">
+                            <i class="fa-brands fa-searchengin icon"></i>
+                        </div>
+                        <div class="col col-md-3">
+                            <button type="submit" class=" py-1">Go</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-            </div>
-
-            <div class="col col-md-4 col-sm-12 d-flex justify-content-end gx-2 ">
-                {% if user.is_authenticated %}
-                <button class="btn" ><a href="{% url 'profile'%}">Profile</a></button>
-                <button class="btn" ><a href="{% url 'logout' %}">Logout</a></button>
-                {% else %}
-                <button class="btn" ><a href="{% url 'login' %}">Login</a></button>
-                <button class="btn bg-secondary btn-sm p-1 py-0 "><a href="{% url 'signup' %}">Sign up</a></button>
-                {% endif %}
-               
-
-                
-
-                
-            
+            <div class="col col-md-4 col-sm-12 d-flex justify-content-end">
+                    {% if user.is_authenticated %}
+                        <button class="btn btn text-black"><a href="{% url 'profile' %}">Profile</a></button>
+                        <button class="btn btn-sm  btn text-black p-1 py-0"><a href="{% url 'logout' %}">Logout</a></button>
+                        {% else %}
+                            <button class="btn"><a href="{% url 'login' %}">Login</a></button>
+                            <button class="btn bg-secondary btn-sm p-1 py-0 "><a href="{% url 'signup' %}">Sign up</a></button>
+                    {% endif %}
             </div>
         </div>
     </div>
-    <hr>
 </nav>
-
-
+<hr>
+<div class="container">
+<a href="{% url 'post-create' %}" ><button class="btn w-100  btn-outline-primary ">+POST</button></a>
+</div>
 
 {% block content %}
 
