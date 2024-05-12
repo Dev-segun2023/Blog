@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+
+{% load static %}
+
+{% block title %} detail {% endblock %}
+
+{% block content %}
+
+ <div class="container-fluid"  data-aos= 'zoom-in' data-aos-duration = '3000'>
+    <form method="POST" style="margin-top: 20px;">
+        {% csrf_token %}
+    <div class="article">
+        <h2> are you sure you want to <B>Delete</B> the post:{{object.title}}</h2>
+        <!-- <img src="{{object.image.url}}" alt="image here" class="w-25 object-fit-contain"> -->
+        <!-- <p>{{object.content}}</p>
+        <p>{{object.date_posted}}</p> -->
+        <!-- <p><a href="#" style="text-decoration: none;">{{object.author}}</a></p> -->
+
+        <div class="form-group">
+            <button class="btn btn-outline-danger " type="submit">Yes Delete</button>
+            <a href="{% url 'post-detail' object.id %}" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    
+    </div>
+</form>
+</div>
+
+
+
+
+
+
+
+<!-- {% for bouquet in bouquets %}  -->
+
+<!-- <h4>{{bouquet.id}}-- <a href="/display/{{bouquet.id}}">{{bouquet.name}}</a></h4> -->
+<!-- <h4>{{bouquet.id}}-- <a href="{% url 'display' bouquet.id %}">{{bouquet.name}}</a></h4> -->
+
+<!-- {% endfor %} -->
+
+{% endblock %}
+

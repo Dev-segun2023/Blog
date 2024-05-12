@@ -47,6 +47,7 @@ padding: 0;
 }
 .footer-menu ul li a{
     text-decoration: none;
+    color: rgba(255, 0, 0, 0.338);
 }
 .about{
     margin-left: 20px;
