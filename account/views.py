@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from base.models import User
+# from base.views import profileUpdate
+from .forms import ProfilePictureForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -100,10 +102,20 @@ def Logout(request):
 
 @login_required
 def profile(request):
-    return render(request, 'account/profile.html', {})
+    if request.method == 'POST':
+        form = ProfilePictureForm(request.POST, request.FILES,instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ProfilePictureForm(instance=request.user.profile)
+
+    return render(request, 'account/profile.html', {'form': form})
     
 
 
-def profile(request):
-    return render(request, 'account/profile.html',{})
-# Create your views here.
+# def profile(request):
+#     return render(request, 'account/profile.html',{})
+
+
+

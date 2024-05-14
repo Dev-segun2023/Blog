@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from account.models import post
+from account.models import profile
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import(
     ListView,
@@ -10,6 +11,13 @@ from django.views.generic import(
     )
 # Create your views here.
 
+
+
+class profileUpdate(profile):
+    models = profile
+    fields = ['image']
+       
+        
 
 def home(request):
     show = post.objects.all()
