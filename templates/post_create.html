@@ -10,7 +10,7 @@
 
 
 
-<form action=""  method="post" class="container w-75 mt-5 bg-info-subtle  p-2"  data-aos ='zoom-out' data-aos-duration="3000">
+<form action="" enctype="multipart/form-data" method="post" class="container w-75 mt-5 bg-info-subtle  p-2"  data-aos ='zoom-out' data-aos-duration="3000">
     {% csrf_token %}
        <!-- <div class="row" > -->
        <div>
@@ -19,7 +19,7 @@
        </div>
        <div>
            <label for="image" class="form-label ">title:</label>
-           <input  name= 'image'type="file" id="" class="form-control">
+           <input  name= 'post_image' type="file" id="" class="form-control">
        </div>
        <div>
            <label for="content" class="form-label ">content:</label>

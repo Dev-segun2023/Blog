@@ -19,8 +19,8 @@ class profileUpdate(profile):
        
         
 
-def home(request):
-    show = post.objects.all()
+# def home(request):
+#     show = post.objects.all()
     # return render(request, 'home.html',context={'show': show})
 
 
@@ -31,6 +31,7 @@ class postListView(ListView):
     template_name = 'home.html'
     context_object_name = 'show'
     ordering = ['-date_posted'] 
+    paginate_by = 3
 
 
 class postDetailView(DetailView):
@@ -42,7 +43,7 @@ class postDetailView(DetailView):
 
 class postCreateView(LoginRequiredMixin, CreateView):
     model = post
-    fields = ['title','content','image']
+    fields = ['title','content','post_image']
     template_name = 'post_create.html'
 
     def form_valid(self, form):
@@ -54,6 +55,7 @@ class postUpdateView(LoginRequiredMixin, UpdateView):
     model = post
     fields = ['title','content','image']
     template_name = 'post_create.html'
+    
     # template_name = 'post_detail.html'
 
     def form_valid(self, form):
